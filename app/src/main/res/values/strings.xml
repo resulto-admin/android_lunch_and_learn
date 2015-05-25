@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">FormationLayout</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_task">My tasks</string>
+
+    <string name="name">Name :</string>
+    <string name="priority">Priority :</string>
+    <string name="estimated_time">%1$d min</string>
+    <string name="estimated_time_label">Estimated time :</string>
+
+    <string name="trivial">Trivial</string>
+    <string name="minor">Minor</string>
+    <string name="moderate">Moderate</string>
+    <string name="major">Major</string>
+
+</resources>
