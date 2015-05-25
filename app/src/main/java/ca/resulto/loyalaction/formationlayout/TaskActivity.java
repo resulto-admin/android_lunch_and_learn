@@ -2,8 +2,6 @@ package ca.resulto.loyalaction.formationlayout;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.DragEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,38 +26,35 @@ public class TaskActivity extends ActionBarActivity {
         setContentView(R.layout.activity_task);
 
         listViewTasks = (ListView) findViewById(R.id.listview_tasks);
-
-        tasks = createTasks();
-
+        tasks = populateTasks();
         taskAdapter = new TaskAdapter(this,R.layout.row_task,tasks);
-
         listViewTasks.setAdapter(taskAdapter);
+
+
+
 
         listViewTasks.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
 
-                Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim);
 
+                Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.anim);
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
-
                     }
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
-                        taskAdapter.remove(taskAdapter.getItem(position));
-
+                        Task task = taskAdapter.getItem(position);
+                        taskAdapter.remove(task);
                         taskAdapter.notifyDataSetChanged();
                     }
 
                     @Override
                     public void onAnimationRepeat(Animation animation) {
-
                     }
                 });
-
                 view.startAnimation(animation);
 
 
@@ -95,7 +90,7 @@ public class TaskActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private ArrayList<Task> createTasks() {
+    private ArrayList<Task> populateTasks() {
         ArrayList<Task> tasks = new ArrayList<>();
         tasks.add(new Task("Feed the cat",Priority.MODERATE,15));
         tasks.add(new Task("Do the dishes",Priority.TRIVIAL,60));

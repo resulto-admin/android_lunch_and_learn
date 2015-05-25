@@ -14,5 +14,6 @@
     <string name="minor">Minor</string>
     <string name="moderate">Moderate</string>
     <string name="major">Major</string>
+    <string name="title_activity_example">ExampleActivity</string>
 
 </resources>

@@ -31,8 +31,8 @@ public class TaskAdapter extends ArrayAdapter<Task> {
             holder = new ViewHolder();
             holder.tvName = (TextView) view.findViewById(R.id.tv_task_name);
             holder.tvPriority = (TextView) view.findViewById(R.id.tv_task_priority);
-            holder.tvEstimatedTime = (TextView) view.findViewById(R.id.tv_task_estimated_time);;
-            holder.relativeLayoutRow = (RelativeLayout) view.findViewById(R.id.rl_task_row);;
+            holder.tvEstimatedTime = (TextView) view.findViewById(R.id.tv_task_estimated_time);
+            holder.relativeLayoutRow = (RelativeLayout) view.findViewById(R.id.rl_task_row);
             view.setTag(holder);
         }
 
